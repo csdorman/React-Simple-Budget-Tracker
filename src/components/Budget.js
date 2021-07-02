@@ -6,7 +6,7 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: ${budget}</span>
+        <span>Budget: ${budget}</span>
         </div>
     )
 }
