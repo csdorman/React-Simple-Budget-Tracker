@@ -1,4 +1,3 @@
-//import { props } from 'bluebird'
 import React, {useContext} from 'react'
 import { TiDelete } from 'react-icons/ti'
 import { AppContext } from '../context/AppContext'
