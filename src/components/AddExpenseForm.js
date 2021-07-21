@@ -2,7 +2,7 @@ import React,{useContext, useState} from 'react'
 import {AppContext} from '../context/AppContext'
 import { v4 as uuidv4 } from 'uuid'
 
-const AddExpenseForm = () => {
+const AddExpenseForm = (props) => {
     const {dispatch} = useContext(AppContext)
 
     const [name, setName] = useState('')
@@ -10,10 +10,9 @@ const AddExpenseForm = () => {
 
     const onSubmit = (event) => {
         event.preventDefault()
-
         const expense = {
             id: uuidv4(),
-            name: name,
+            name,
             cost: parseInt(cost)
         }
 
@@ -21,13 +20,16 @@ const AddExpenseForm = () => {
             type: 'ADD_EXPENSE',
             payload: expense,
         })
+
+        setName('')
+        setCost('')
     }
 
     return (
         <form onSubmit={onSubmit}>
             <div className="row">
                 <div className="col-sm">
-                    <label for='name'>Name</label>
+                    <label htmlFor='name'>Name</label>
                     <input
                         required='required'
                         type='text'
@@ -38,7 +40,7 @@ const AddExpenseForm = () => {
                     ></input>
                 </div>
                 <div className="col-sm">
-                    <label for='cost'>Cost</label>
+                    <label htmlFor='cost'>Cost</label>
                     <input
                         required='required'
                         type='text'
