@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext'
 
 const Budget = () => {
     const {budget, dispatch} = useContext(AppContext)
-    const {isEditing, setIsEditing} = useState(false)
+    const [isEditing, setIsEditing] = useState(false)
 
     const handleEditClick = () => {
         setIsEditing(true)
