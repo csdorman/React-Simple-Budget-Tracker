@@ -14,7 +14,7 @@ const Budget = () => {
     const handleSaveClick = (value) => {
         dispatch({
             type: 'SET_BUDGET',
-            payload: 'value',
+            payload: value,
         })
         setIsEditing(false)
     }
